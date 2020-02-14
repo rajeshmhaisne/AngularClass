@@ -1,5 +1,7 @@
 <p>mob-parts works!</p>
 
+<p>We have {{ calcProd() }} books in stock</p>
+
 <ul style="color: grey;">
   <li *ngFor="let mobPart of mobParts">
     <div class="col s12 m4">
@@ -17,7 +19,7 @@
           </p>
           <p>Prod Id: {{ mobPart.id }}</p>
           <p>Prod Company {{ mobPart.company }}</p>
-          <p *ngIf="mobPart.inStock == 0; else Printstock">
+          <p *ngIf="mobPart.inStock == 0; else Printstock" class="appFirst">
             Out of stock
           </p>
           <ng-template #Printstock

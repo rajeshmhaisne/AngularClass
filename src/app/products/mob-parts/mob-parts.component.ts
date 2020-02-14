@@ -1,4 +1,8 @@
+import { FirstDirective } from "./../../directives/first.directive";
+import { MOBPARTS } from "./mock";
 import { Component, OnInit } from "@angular/core";
+
+import { MobParts } from "./mob-parts";
 
 @Component({
   selector: "app-mob-parts",
@@ -12,36 +16,13 @@ import { Component, OnInit } from "@angular/core";
   ]
 })
 export class MobPartsComponent {
-  mobParts = [
-    {
-      name: "Mobile Screen",
-      id: 1001,
-      company: "OnePlus",
-      imageURL: "./../assets/img/3.jpeg",
-      inStock: 350,
-      prodColor: "Red",
-      isOnline: true,
-      Country: "India"
-    },
-    {
-      name: "Mobile Screen 5",
-      id: 1002,
-      company: "Samsung",
-      imageURL: "./../assets/img/1.jpeg",
-      inStock: 250,
-      prodColor: "Green",
-      isOnline: true,
-      Country: "Australia"
-    },
-    {
-      name: "Mobile Screen 5.5",
-      id: 1003,
-      company: "Nokia",
-      imageURL: "./../assets/img/2.jpeg",
-      inStock: 0,
-      prodColor: "Blue",
-      isOnline: false,
-      Country: "USA"
+  mobParts: MobParts[] = MOBPARTS;
+
+  calcProd() {
+    let sum = 0;
+    for (let mobPart of this.mobParts) {
+      sum += mobPart.inStock;
     }
-  ];
+    return sum;
+  }
 }

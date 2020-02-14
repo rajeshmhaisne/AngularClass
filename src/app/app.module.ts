@@ -14,6 +14,8 @@ import { BooksComponent } from "./products/books/books.component";
 import { PenComponent } from "./products/pen/pen.component";
 
 import { SqrtPipe } from "./pipes/sqrt.pipe";
+import { FirstDirective } from "./directives/first.directive";
+import { HostDirective } from './directives/host.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SqrtPipe } from "./pipes/sqrt.pipe";
     MobPartsComponent,
     BooksComponent,
     PenComponent,
-    SqrtPipe
+    SqrtPipe,
+    FirstDirective,
+    HostDirective
   ],
   imports: [BrowserModule],
   bootstrap: [AppComponent]
